@@ -1,0 +1,106 @@
+/* Набор анимаций с прозрачностью */
+@keyframes opacity-show{
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes opacity-hide{
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+/* Набор анимаций с прозрачным выездом сверху */
+@keyframes opacity-showup{
+	0%{transform: translateY(-100%); opacity: 0;}
+	100%{transform: translateY(0); opacity: 1;}
+}
+@keyframes opacity-showup-duration{
+	0%{transform: translateY(-100%); opacity: 0;}
+	50%{transform: translateY(-100%); opacity: 0;}
+	100%{transform: translateY(0); opacity: 1;}
+}
+@keyframes opacity-fadeup{
+	0%{transform: translateY(0); opacity: 1;}
+	100%{transform: translateY(-100%); opacity: 0;}
+}
+@keyframes opacity-showhide-delay{
+	0%{transform: translateY(-100%); opacity: 0;}
+	5%{transform: translateY(0); opacity: 1;}
+	85%{transform: translateY(0%); opacity: 1;}
+	90%{transform: translateY(-100%); opacity: 0;}
+	100%{transform: translateY(-100%); opacity: 0;}
+}
+@keyframes opacity-showhidedown-delay{
+	0%{transform: translateY(100%); opacity: 0;}
+	5%{transform: translateY(0); opacity: 1;}
+	85%{transform: translateY(0%); opacity: 1;}
+	90%{transform: translateY(100%); opacity: 0;}
+	100%{transform: translateY(100%); opacity: 0;}
+}
+
+/* Анимация барабан */
+@keyframes drum-show{
+	0%{ transform: rotate(360deg) scale3d(0, 0, 0); opacity: 0; }
+	100%{ transform: rotate(0deg) scale3d(100%, 100%, 0); opacity: 1; }
+}
+@keyframes drum-hide{
+	0%{ transform: rotate(0deg) scale3d(100%, 100%, 0); opacity: 1; }
+	100%{ transform: rotate(360deg) scale3d(0, 0, 0); opacity: 0; }
+}
+
+/* Анимация растяжения */
+@keyframes width-show{
+	0%{ transform: scaleX(0); opacity: 0; }
+	100%{ transform: scaleX(100%); opacity: 1; }
+}
+@keyframes width-hide{
+	0%{ transform: scaleX(100%); opacity: 1; }
+	100%{ transform: scaleX(0); opacity: 0; }
+}
+
+/* Анимация сердцебиения */
+@keyframes heartBeat {
+    0% { transform: scale(0); }
+    44% { transform: scale(1.1); }
+    58% { transform: scale(1); }
+    72% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Анимация прокрутки блока на всю высоту */
+@keyframes carousel-element{
+	0%{ transform: translateY(-100%); }
+	100% { transform: translateY(100%); }
+}
+
+/* Универсальные анимации */
+.anim-delay-opacity-showup{
+	animation: opacity-showhidedown-delay 20s;
+	animation-iteration-count: infinite;
+}
+
+/* Анимации для барабана */
+.anim-drum-show .content { animation: opacity-showup 1s; opacity: 1; bottom: 0; }
+.anim-drum-show .icon { animation: drum-show 1s; opacity: 1; }
+.anim-drum-hide .content { animation: opacity-fadeup 1s; opacity: 0; bottom: 100%; }
+.anim-drum-hide .icon { animation: drum-hide 1s; opacity: 0; }
+
+/* Анимации для карусели */
+.anim-carousel-show .wrapper { animation: opacity-showup 1.2s; }
+/* .anim-carousel-show .wrapper:nth-child(2) { animation: opacity-showup 0.8s; }
+.anim-carousel-show .wrapper:nth-child(3) { animation: opacity-showup 1.2s; }
+.anim-carousel-show .wrapper:nth-child(4) { animation: opacity-showup 1.6s; }
+.anim-carousel-show .wrapper:nth-child(5) { animation: opacity-showup 2s; } */
+.anim-carousel-hide .wrapper { animation: opacity-fadeup 1.2s; opacity: 0; }
+/* .anim-carousel-hide .wrapper:nth-child(2) { animation: opacity-fadeup 0.8s; opacity: 0; }
+.anim-carousel-hide .wrapper:nth-child(3) { animation: opacity-fadeup 1.2s; opacity: 0; }
+.anim-carousel-hide .wrapper:nth-child(4) { animation: opacity-fadeup 1.6s; opacity: 0; }
+.anim-carousel-hide .wrapper:nth-child(5) { animation: opacity-fadeup 2s; opacity: 0; } */
+
+/* Анимации для голосования */
+.titre.vote { animation: width-show 1s; }
+.titre.vote .wrapper { animation: opacity-showup-duration 1.2s; }
+.titre.vote .progress-bar .bar{ transition: 0.5s right; }
+
+/* Анимация для одиночного титра */
+.anim-simple-show{ animation: opacity-showup 1s; }
+.anim-simple-hide{ animation: opacity-fadeup 1s; }
